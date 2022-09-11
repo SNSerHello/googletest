@@ -84,3 +84,4 @@ googlemock/gtest
 /ALL_BUILD.vcxproj
 
 dist/*
+shared_build/*

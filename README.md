@@ -2,10 +2,21 @@
 
 ## 在Windows下编译
 
+### 静态库
+
 ```bash
 mkdir build
 cd build
 cmake .. -G "Visual Studio 15 2017 Win64" -DINSTALL_GTEST=ON -DCMAKE_INSTALL_PREFIX=../dist/googletest
+msbuild /maxcpucount:4 /p:Configuration=Release /p:PreferredToolArchitecture=x64 ALL_BUILD.vcxproj -t:rebuild
+```
+
+### 动态库
+
+```bash
+mkdir build
+cd build
+cmake .. -G "Visual Studio 15 2017 Win64" -DBUILD_SHARED_LIBS=ON -DINSTALL_GTEST=ON -DCMAKE_INSTALL_PREFIX=../dist/googletest
 msbuild /maxcpucount:4 /p:Configuration=Release /p:PreferredToolArchitecture=x64 ALL_BUILD.vcxproj -t:rebuild
 ```
 
