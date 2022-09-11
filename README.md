@@ -1,5 +1,32 @@
 # GoogleTest
 
+## 在Windows下编译
+
+```bash
+mkdir build
+cd build
+cmake .. -G "Visual Studio 15 2017 Win64" -DINSTALL_GTEST=ON -DCMAKE_INSTALL_PREFIX=../dist/googletest
+msbuild /maxcpucount:4 /p:Configuration=Release /p:PreferredToolArchitecture=x64 ALL_BUILD.vcxproj -t:rebuild
+```
+
+**测试**
+
+```bash
+msbuild /maxcpucount:4 /p:Configuration=Release /p:PreferredToolArchitecture=x64 RUN_TESTS.vcxproj
+```
+
+**安装**
+
+```bash
+msbuild /maxcpucount:4 /p:Configuration=Release /p:PreferredToolArchitecture=x64 INSTALL.vcxproj
+```
+
+
+
+---
+
+
+
 ### Announcements
 
 #### Live at Head
